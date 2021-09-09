@@ -1,53 +1,41 @@
--- phpMyAdmin SQL Dump
--- version 4.7.9
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Sep 04, 2021 at 07:42 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+/*
+Navicat MySQL Data Transfer
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+Source Server         : localhost_3306
+Source Server Version : 100419
+Source Host           : localhost:3306
+Source Database       : learn_pl2
 
+Target Server Type    : MYSQL
+Target Server Version : 100419
+File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+Date: 2021-09-09 20:39:34
+*/
 
---
--- Database: `learn_pl2`
---
+SET FOREIGN_KEY_CHECKS=0;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `mahasiswa`
---
-
+-- ----------------------------
+-- Table structure for mahasiswa
+-- ----------------------------
+DROP TABLE IF EXISTS `mahasiswa`;
 CREATE TABLE `mahasiswa` (
   `npm` int(6) NOT NULL,
-  `nama` varchar(50) NOT NULL
+  `nama` varchar(50) NOT NULL,
+  PRIMARY KEY (`npm`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `mahasiswa`
---
+-- ----------------------------
+-- Records of mahasiswa
+-- ----------------------------
+INSERT INTO `mahasiswa` VALUES ('12', 'asas');
+INSERT INTO `mahasiswa` VALUES ('110602', 'Saepudin');
+INSERT INTO `mahasiswa` VALUES ('110608', 'Deni Pangale');
 
-INSERT INTO `mahasiswa` (`npm`, `nama`) VALUES
-(12, 'asas'),
-(110602, 'Saepudin'),
-(110608, 'Deni Pangale');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pbo_pegawai`
---
-
+-- ----------------------------
+-- Table structure for pbo_pegawai
+-- ----------------------------
+DROP TABLE IF EXISTS `pbo_pegawai`;
 CREATE TABLE `pbo_pegawai` (
   `nip` int(8) NOT NULL,
   `nama` varchar(100) NOT NULL,
@@ -57,24 +45,8 @@ CREATE TABLE `pbo_pegawai` (
   `mulai_kerja` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `pbo_pegawai`
---
-
-INSERT INTO `pbo_pegawai` (`nip`, `nama`, `jns_kel`, `tgl_lahir`, `status`, `mulai_kerja`) VALUES
-(132442, 'Dani Anggoro', 'L', '2021-09-08', 'M', '2021-09-15');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `mahasiswa`
---
-ALTER TABLE `mahasiswa`
-  ADD PRIMARY KEY (`npm`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- ----------------------------
+-- Records of pbo_pegawai
+-- ----------------------------
+INSERT INTO `pbo_pegawai` VALUES ('132442', 'Dani Anggara', 'L', '2021-09-08', 'M', '2021-09-15');
+INSERT INTO `pbo_pegawai` VALUES ('132443', 'Muhamad Ridwan', 'L', '2000-02-06', 'B', '2018-09-20');
